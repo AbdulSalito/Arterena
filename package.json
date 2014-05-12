@@ -16,16 +16,14 @@
     "mongoose": "latest",
     "passport" : "latest",     
     "passport-local" : "latest",  
-    "passport-facebook" : "latest", 
-    "passport-twitter" : "latest",  
-    "passport-google" : "latest",
     "connect-flash" : "latest",   
-    "bcrypt-nodejs" : "latest" ,
+    "crypto" : "latest" ,
     "formidable": "latest",
     "gm": "latest",
     "imagemagick": "latest",
     "image-size": "latest",
     "formidable": "latest",
+    "express-session": "latest",
     "nodemailer": "latest"
   }
 }
