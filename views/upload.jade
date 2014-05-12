@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	form(action='/uploadPhoto', name='files', method='post', enctype='multipart/form-data')
+		fieldset(data-role='controlgroup')
+			label(for='image') photo
+			input(id='image',name='image',type='file',)
+			label(for='price') Price
+			input.form-control(type='text', id="price", name="price", placeholder='Enter price')
+			label(for='title') Title
+			input.form-control(type='text', id="title", name="title", placeholder='Enter title')
+			input(type='submit',value='Upload',data-transition='fade', data-theme='c')  

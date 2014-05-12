@@ -1,0 +1,57 @@
+extends layout
+
+block content
+	h1= title
+	p= 'Hello ' + user + '!'
+	a(href="/upload") Upload photos
+	span  | 
+	a(href="/cart") My cart
+	div.itemContainer
+		table
+			tr
+				td(colspan='5', style='text-align:left;')
+					h2= 'Previous Orders:'
+			if orderDataTotal != 0
+				each val in orderData
+					tr
+						td
+							a(href='/images/fullSize/' + val.name)
+								img(src= '/images/thumbs/thumb' + val.name)
+						td
+							p.itemName()= val.title
+						td
+							p.itemPrice()= '$' + val.price
+						td
+							p=' size: ' + val.size + ' KB'
+						td
+							p= 'dimentions: ' + val.width + ' x ' + val.height
+			else
+				tr
+					td
+						p= 'You have never ordered before!'
+						p= 'What are you waiting for?'
+		table
+			tr
+				td(colspan='5', style='text-align:left;')
+					h2= 'Photos For Sale:'
+			if photoDataTotal != 0
+				each val in photoData
+					tr
+						td
+							img(src= '/images/thumbs/thumb' + val.name)
+						td
+							p.itemName()= val.title
+						td
+							p.itemPrice()= '$' + val.price
+						td
+							p=' size: ' + val.size + ' KB'
+						td
+							p= 'dimentions: ' + val.width + ' x ' + val.height
+			else
+				tr
+					td
+						p= 'You have no photos for Sale!'
+						p= 'What are you waiting for? start making business '
+							a(href='/upload') here
+	div(style="clear:both;")
+

@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title= 'Arterena'
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src="/javascripts/simpleCart2.js")
+    script(type='text/javascript').
+      simpleCart.email = "aababtain@gmail.com";
+      simpleCart.cartHeaders = ['Image','Name','Price','Quantity_input','Total'];
+      simpleCart.checkoutTo = Email;
+  body
+    div#outerarea
+      div#innerarea
+        div#header
+          a(href="/")
+            img.logo(align="left",src="/images/logo.jpg",border=0)
+          div#nav
+            a.nav(href="/") Home
+            span  | 
+            a.nav(href="/Gallary") Gallary
+            span  | 
+            a.nav(href="/Contact") Contact Us
+            span  | 
+            - if (!user) {
+              a.nav(href="/login") Login
+            - } else {
+              span welcome: #{user}  
+              a.nav(href="/logout") Logout
+            - }
+        div#bodyContent
+          block content
+        div#footer All copy rights belongs to Arterena

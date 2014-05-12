@@ -1,0 +1,32 @@
+extends layout
+
+block content
+	div.itemContainer
+		table
+			tr
+				td
+					p()= 'Picture'
+				td
+					p()= 'Name'
+				td
+					p()= 'Price'
+				td
+					p= 'Size '
+				td
+					p= 'Dimentions'
+				td
+			each val in data
+				tr
+					td
+						img(src= '/images/thumbs/thumb' + val.name)
+					td
+						p.itemName()= val.title
+					td
+						p.itemPrice()= '$' + val.price
+					td
+						p=' size: ' + val.size + ' KB'
+					td
+						p= val.width + ' x ' + val.height
+					td 
+						a(href='/addToCart/' + val._id) Add to Cart
+		div(style="clear:both;")

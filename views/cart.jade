@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	div.itemContainer
+		table
+			if total != 0
+				each val in data
+					tr
+						td
+							img(src= '/images/thumbs/thumb' + val.name)
+						td
+							p.itemName()= val.title
+						td
+							p.itemPrice()= '$' + val.price
+						td
+							p=' size: ' + val.size + ' KB'
+						td
+							p= 'dimentions: ' + val.width + ' x ' + val.height
+				tr
+					td(colspan='2')= 'Total'
+					td
+						p.itemTotal()= '$' + total
+					td
+						a(href='/checkOut')= 'checkout'
+					td
+						p= 'cancel: '
+			else
+				p= 'You have an empty cart!'
+		div(style="clear:both;")
